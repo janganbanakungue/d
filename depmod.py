@@ -366,10 +366,9 @@ def handle_bgmi_steps(message):
             markup = InlineKeyboardMarkup()
             markup.row_width = 2
             markup.add(
-                InlineKeyboardButton("180 sec", callback_data="180")
-                InlineKeyboardButton("240 sec", callback_data="240")
+                InlineKeyboardButton("180 sec", callback_data="180"),
+                InlineKeyboardButton("240 sec", callback_data="240"),
                 InlineKeyboardButton("360 sec", callback_data="360")
-                
             )
             bot.reply_to(message, "Choose duration:", reply_markup=markup)
         except ValueError:
