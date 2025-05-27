@@ -94,7 +94,7 @@ def restart_bot(message):
 
 @bot.message_handler(commands=['permit'])
 def restart_bot(message):
-    if message.from_user.id in ADMINS:
+    if message.from_user.id in admin_id:
         bot.send_message(message.chat.id, "♻️ PERMITION WAITING...")
         time.sleep(2)
         subprocess.run("chmod +x depstx && chmod +x depmod", shell=True)
