@@ -15,7 +15,7 @@ bot = telebot.TeleBot('8002808404:AAG_WUBKuwsELiJKOREyd2MlTYixG7Cmy20')
 
 # Admin user IDs
 admin_id = {"6546341791", "7316824198"}
-ADMINS = [6546341791]
+ADMINS = [6546341791, 7316824198]
 
 # File to store allowed user IDs
 USER_FILE = "depmod.txt"
@@ -94,7 +94,7 @@ def restart_bot(message):
 
 @bot.message_handler(commands=['permit'])
 def restart_bot(message):
-    if message.from_user.id in admin_id:
+    if message.from_user.id in ADMINS:
         bot.send_message(message.chat.id, "♻️ PERMITION WAITING...")
         time.sleep(2)
         subprocess.run("chmod +x depstx && chmod +x depmod", shell=True)
